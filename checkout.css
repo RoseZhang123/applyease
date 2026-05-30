@@ -45,7 +45,6 @@ body {
 
 .brand,
 nav,
-.hero-actions,
 .school-grid,
 .prices {
   display: flex;
@@ -90,9 +89,9 @@ p {
 }
 
 h1 {
-  max-width: 760px;
-  font-size: clamp(38px, 6vw, 72px);
-  line-height: 1.02;
+  max-width: 860px;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.12;
 }
 
 h2 {
@@ -128,21 +127,17 @@ main {
 
 .hero-band {
   display: grid;
-  grid-template-columns: minmax(280px, 1.2fr) minmax(260px, 0.8fr);
-  gap: 26px;
-  align-items: stretch;
-  padding-top: 58px;
+  grid-template-columns: 1fr;
+  padding-top: 34px;
 }
 
 .hero-copy,
 .pricing-band,
 .payment-copy,
-.trust-panel,
 .unsupported-panel,
 .accordion-item,
 .policy-item,
 .plan,
-.payment-method,
 .payment-dialog-card,
 .feature-band article {
   border: 1px solid var(--line);
@@ -153,8 +148,8 @@ main {
 
 .hero-copy {
   display: grid;
-  gap: 20px;
-  padding: clamp(24px, 4vw, 44px);
+  gap: 18px;
+  padding: clamp(22px, 3.2vw, 36px);
 }
 
 .eyebrow {
@@ -182,11 +177,6 @@ main {
   line-height: 1.55;
 }
 .hero-disclaimer strong { color: #1f1300; }
-
-.hero-actions {
-  flex-wrap: wrap;
-  gap: 12px;
-}
 
 .primary-link,
 .secondary-link,
@@ -229,12 +219,10 @@ button:hover,
   background: var(--primary-dark);
 }
 
-.trust-panel,
 .unsupported-panel {
   padding: 22px;
 }
 
-.trust-panel ul,
 .unsupported-panel ul {
   display: grid;
   gap: 10px;
@@ -382,8 +370,7 @@ dt {
 
 .payment-band {
   display: grid;
-  grid-template-columns: minmax(260px, 0.85fr) minmax(300px, 1.15fr);
-  gap: 22px;
+  grid-template-columns: 1fr;
   background: #ffffff;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -396,6 +383,12 @@ dt {
   box-shadow: none;
 }
 
+.payment-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 dl {
   display: grid;
   gap: 10px;
@@ -406,21 +399,9 @@ dd {
   margin: 0;
 }
 
-.payment-actions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(180px, 1fr));
-  gap: 14px;
-}
-
-.payment-method {
-  display: grid;
-  gap: 10px;
-  padding: 16px;
-  box-shadow: none;
-}
-
 .payment-method-btn {
-  width: 100%;
+  width: auto;
+  min-width: 112px;
 }
 
 .payment-dialog {
@@ -506,15 +487,25 @@ dd {
   font-size: 14px;
 }
 
-.policy-list {
-  display: grid;
-  gap: 10px;
-  width: 100%;
-}
-
 .faq-band {
   display: grid;
   gap: 18px;
+}
+
+.faq-sections,
+.policy-list {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+.faq-group {
+  display: grid;
+  gap: 10px;
+}
+
+.faq-group h3 {
+  padding-top: 6px;
 }
 
 .accordion-list {
@@ -577,6 +568,18 @@ dd {
   padding-top: 14px;
 }
 
+.policy-band {
+  display: grid;
+  gap: 18px;
+}
+
+.policy-item {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  box-shadow: none;
+}
+
 @media (max-width: 820px) {
   .topbar,
   .hero-band,
@@ -611,7 +614,5 @@ dd {
     justify-content: flex-start;
   }
 
-  .payment-actions {
-    grid-template-columns: 1fr;
-  }
+  .payment-buttons { align-items: stretch; }
 }

@@ -1,34 +1,33 @@
-# ApplyEase Pages
+# ApplyEase checkout page
 
-Static public pages for ApplyEase checkout, policy disclosure, privacy policy, terms, refund policy, and contact information.
+`checkout.html` is a minimal external checkout and policy page intended for Cloudflare Pages static hosting.
 
-## Cloudflare Pages
-
-Use this repository as a Cloudflare Pages project:
-
-- Framework preset: `None`
-- Build command: leave empty
-- Build output directory: `/`
-- Root directory: repository root
-
-After deploy, the checkout page is available at:
+Current MVP URL:
 
 ```text
-https://<your-cloudflare-pages-domain>/checkout.html
+https://pages.rose-zhang-2022.workers.dev/checkout
 ```
 
-The repo root redirects users to `checkout.html`.
+Deployment:
 
-## Current Pages
+- Cloudflare Pages is connected to `RoseZhang123/pages`.
+- The deployed repo stores the checkout files at the repository root.
+- Cloudflare Pages settings: framework preset `None`, build command empty, output directory `/`.
+- Push updates to `RoseZhang123/pages/main`; Cloudflare deploys automatically.
 
-- `checkout.html`: pricing, order number, WeChat/Alipay placeholder QR panels, renewal terms, refund policy, privacy policy, service terms, contact info.
-- `checkout.css`: responsive styling.
-- `checkout.js`: client-side order number generation and plan selection.
-- `_headers`: conservative static security headers for Cloudflare Pages.
+Current MVP payment model:
 
-## Notes Before Launch
+- Personal plan: RMB 99/month or RMB 699/year.
+- Enterprise plan: RMB 399/month or RMB 2399/year.
+- WeChat Pay and Alipay QR codes are placeholders until real receiving codes are added.
+- The page generates a client-side order number for manual reconciliation.
+- Users must include the order number and email in the payment note, then send payment proof to support.
+- Activation codes are issued manually after payment confirmation.
 
-- Replace the WeChat/Alipay QR placeholders with the real current receiving QR codes or merchant payment integration.
-- Update `support@applyease.cn` and `applyease-support-placeholder` if the official contact channels change.
-- Keep pricing, renewal terms, refund policy, privacy policy, service terms, and non-Google payment disclosure visible before payment.
-- Chrome Web Store listing text should disclose that payment is handled by ApplyEase and not by Google or Chrome Web Store.
+Compliance notes:
+
+- Chrome Web Store does not process these payments.
+- Store listing text must disclose that core functionality requires a paid ApplyEase activation code if that remains true at launch.
+- The checkout page must keep pricing, renewal terms, refund policy, privacy policy, contact info, and non-Google payment disclosure visible before payment.
+- Refunds are not generally supported after activation code delivery, except when a verified ApplyEase technical issue prevents use on declared supported school application pages and no reasonable fix or workaround is provided.
+- Support diagnostics are manual and user-initiated. Diagnostic reports should avoid student profile content and include only operational details needed for troubleshooting.
