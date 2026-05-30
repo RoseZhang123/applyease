@@ -6,10 +6,10 @@
   const planButtons = Array.from(document.querySelectorAll(".plan-option"));
 
   const PLAN_BY_ID = {
-    C_MONTHLY: { label: "C 端个人版 · ¥99/月", note: "C_MONTHLY" },
-    C_YEARLY: { label: "C 端个人版 · ¥699/年", note: "C_YEARLY" },
-    B_MONTHLY: { label: "B 端机构版 · ¥399/月", note: "B_MONTHLY" },
-    B_YEARLY: { label: "B 端机构版 · ¥2999/年", note: "B_YEARLY" }
+    PERSONAL_MONTHLY: { label: "个人版 · ¥99/月", note: "PERSONAL_MONTHLY" },
+    PERSONAL_YEARLY: { label: "个人版 · ¥699/年", note: "PERSONAL_YEARLY" },
+    ENTERPRISE_MONTHLY: { label: "企业版 · ¥399/月", note: "ENTERPRISE_MONTHLY" },
+    ENTERPRISE_YEARLY: { label: "企业版 · ¥2999/年", note: "ENTERPRISE_YEARLY" }
   };
 
   function buildOrderId() {
@@ -24,10 +24,10 @@
   }
 
   const orderId = buildOrderId();
-  let selectedPlanId = "C_YEARLY";
+  let selectedPlanId = "PERSONAL_YEARLY";
 
   function renderSelectedPlan() {
-    const plan = PLAN_BY_ID[selectedPlanId] || PLAN_BY_ID.C_YEARLY;
+    const plan = PLAN_BY_ID[selectedPlanId] || PLAN_BY_ID.PERSONAL_YEARLY;
     if (selectedPlanLabel) selectedPlanLabel.textContent = plan.label;
     if (paymentNoteEl) paymentNoteEl.textContent = `${orderId} ${plan.note} user@example.com`;
     planButtons.forEach((btn) => {

@@ -1,20 +1,25 @@
 :root {
   color-scheme: light;
-  --bg: #f5f7fb;
+  --bg: #f6f8fb;
   --ink: #172033;
-  --muted: #667085;
+  --muted: #617086;
   --line: #d9e1ec;
   --panel: #ffffff;
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
   --green: #15803d;
-  --blue-soft: #eef5ff;
   --green-soft: #edfdf4;
+  --blue-soft: #eef5ff;
   --warn-soft: #fff7ed;
+  --shadow: 0 12px 30px rgba(22, 34, 51, 0.08);
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -25,16 +30,58 @@ body {
 }
 
 .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 22px clamp(18px, 5vw, 56px);
+  padding: 16px clamp(18px, 5vw, 64px);
   border-bottom: 1px solid var(--line);
-  background: var(--panel);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
 }
 
-.eyebrow,
+.brand,
+nav,
+.hero-actions,
+.school-grid,
+.prices {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 7px;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+nav {
+  gap: 16px;
+}
+
+nav a,
+.secondary-link,
+.topbar a {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -42,87 +89,205 @@ p {
   margin: 0;
 }
 
-.eyebrow {
-  margin-bottom: 5px;
-  color: var(--primary);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 h1 {
-  font-size: 28px;
-  line-height: 1.12;
+  max-width: 760px;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.02;
 }
 
 h2 {
-  font-size: 18px;
-  line-height: 1.25;
+  font-size: 24px;
+  line-height: 1.2;
 }
 
 h3 {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 p,
+li,
 dd {
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.top-link,
-button {
-  border-radius: 7px;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.top-link {
-  color: var(--primary-dark);
-  text-decoration: none;
+  font-size: 15px;
+  line-height: 1.62;
 }
 
 main {
   display: grid;
-  gap: 22px;
 }
 
-.checkout-band,
+.hero-band,
+.feature-band,
+.scope-band,
+.pricing-band,
 .payment-band,
 .policy-band {
-  padding: 28px clamp(18px, 5vw, 56px);
+  padding: 34px clamp(18px, 5vw, 64px);
 }
 
-.checkout-band {
+.hero-band {
   display: grid;
-  grid-template-columns: minmax(260px, 0.8fr) minmax(300px, 1.2fr);
-  gap: 22px;
-  align-items: start;
+  grid-template-columns: minmax(280px, 1.2fr) minmax(260px, 0.8fr);
+  gap: 26px;
+  align-items: stretch;
+  padding-top: 58px;
 }
 
-.checkout-intro,
+.hero-copy,
+.pricing-band,
+.payment-copy,
+.trust-panel,
+.unsupported-panel,
+.policy-item,
 .plan,
 .qr-panel,
-.policy-item {
+.feature-band article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+  box-shadow: var(--shadow);
 }
 
-.checkout-intro {
+.hero-copy {
   display: grid;
-  gap: 14px;
-  padding: 18px;
+  gap: 20px;
+  padding: clamp(24px, 4vw, 44px);
 }
 
-.notice {
-  padding: 12px;
-  border: 1px solid #fed7aa;
+.eyebrow {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  max-width: 760px;
+  color: #42526a;
+  font-size: 17px;
+}
+
+.hero-actions {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-link,
+.secondary-link,
+button {
+  min-height: 40px;
   border-radius: 7px;
-  background: var(--warn-soft);
-  color: #9a3412;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.primary-link,
+button {
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.primary-link {
+  display: inline-grid;
+  place-items: center;
+  padding: 0 16px;
+  text-decoration: none;
+}
+
+.secondary-link {
+  display: inline-grid;
+  place-items: center;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+}
+
+button {
+  padding: 7px 12px;
+}
+
+button:hover,
+.primary-link:hover {
+  background: var(--primary-dark);
+}
+
+.trust-panel,
+.unsupported-panel {
+  padding: 22px;
+}
+
+.trust-panel ul,
+.unsupported-panel ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.feature-band {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.feature-band article {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+}
+
+.feature-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 7px;
+  background: var(--blue-soft);
+  color: var(--primary-dark);
+  font-weight: 900;
+}
+
+.scope-band {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(280px, 0.9fr);
+  gap: 20px;
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.scope-band > div:first-child {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.school-grid {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.school-grid span {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #f8fafc;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.pricing-band {
+  display: grid;
+  gap: 18px;
+  margin: 34px clamp(18px, 5vw, 64px);
+  padding: 24px;
+}
+
+.section-heading {
+  display: grid;
+  gap: 8px;
 }
 
 .order-strip {
@@ -136,33 +301,17 @@ main {
   background: #f8fafc;
 }
 
-.order-strip span {
+.order-strip span,
+dt {
   color: var(--muted);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-.order-strip strong {
-  overflow-wrap: anywhere;
-  font-size: 16px;
-}
-
-button {
-  min-height: 34px;
-  padding: 7px 10px;
-  border: 1px solid var(--primary);
-  background: var(--primary);
-  color: #ffffff;
-  cursor: pointer;
-}
-
-button:hover {
-  background: var(--primary-dark);
-}
-
+.order-strip strong,
 .hint span {
   color: var(--ink);
-  font-weight: 700;
+  font-weight: 850;
 }
 
 .plans {
@@ -173,30 +322,30 @@ button:hover {
 .plan {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 14px;
+  gap: 16px;
   padding: 18px;
+  box-shadow: none;
 }
 
-.plan h2 {
-  margin-bottom: 8px;
+.featured-plan {
+  border-color: rgba(37, 99, 235, 0.45);
 }
 
 .prices {
-  display: grid;
-  gap: 6px;
-  min-width: 110px;
-  text-align: right;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 .plan-option {
   display: grid;
   gap: 3px;
-  min-width: 118px;
+  min-width: 132px;
   padding: 10px 12px;
   border: 1px solid var(--line);
   background: #ffffff;
   color: var(--ink);
-  text-align: right;
+  text-align: left;
 }
 
 .plan-option[aria-pressed="true"] {
@@ -213,7 +362,7 @@ button:hover {
 .plan-option span {
   color: var(--green);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .payment-band {
@@ -227,19 +376,15 @@ button:hover {
 
 .payment-copy {
   display: grid;
-  gap: 12px;
+  gap: 14px;
+  padding: 22px;
+  box-shadow: none;
 }
 
 dl {
   display: grid;
   gap: 10px;
   margin: 0;
-}
-
-dt {
-  margin-bottom: 3px;
-  font-size: 13px;
-  font-weight: 800;
 }
 
 dd {
@@ -256,13 +401,14 @@ dd {
   display: grid;
   gap: 10px;
   padding: 16px;
+  box-shadow: none;
 }
 
 .qr-placeholder {
   display: grid;
-  place-items: center;
   width: 100%;
   aspect-ratio: 1;
+  place-items: center;
   border: 2px dashed #86efac;
   border-radius: 8px;
   background:
@@ -284,7 +430,7 @@ dd {
   border-radius: 7px;
   background: rgba(255, 255, 255, 0.86);
   color: var(--ink);
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .policy-list {
@@ -297,17 +443,33 @@ dd {
   display: grid;
   gap: 8px;
   padding: 18px;
+  box-shadow: none;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   .topbar,
-  .checkout-band,
+  .hero-band,
+  .scope-band,
   .payment-band {
     grid-template-columns: 1fr;
   }
 
   .topbar {
     align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .feature-band {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-band {
+    margin-right: 18px;
+    margin-left: 18px;
   }
 
   .plan {
@@ -315,11 +477,7 @@ dd {
   }
 
   .prices {
-    text-align: left;
-  }
-
-  .plan-option {
-    text-align: left;
+    justify-content: flex-start;
   }
 
   .qr-grid {
