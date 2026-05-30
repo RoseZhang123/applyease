@@ -27,6 +27,7 @@
           <p class="eyebrow">本地优先的申请表自动填写工具</p>
           <h1>留学申请资料一次整理，多校表单一键填写。</h1>
           <p class="hero-subtitle">ApplyEase 帮助学生和机构把本地档案自动填入港新高校申请系统。您的申请资料全程保存在自己的浏览器中，不上传云端，不发送给 AI 服务，安全边界清晰可控。</p>
+          <p class="hero-disclaimer">⚠️ ApplyEase 只是辅助填表工具，不替您做最终决策。学校表单格式经常变化，自动填写结果可能出错或漏填，<strong>提交申请前请务必逐项人工核对所有字段</strong>。提交结果由用户本人承担。</p>
           <div class="hero-actions">
             <a class="primary-link" href="#pricing">选择套餐</a>
             <a class="secondary-link" href="#support">查看支持范围</a>
@@ -67,16 +68,18 @@
           <h2>当前覆盖港新五校常见申请表。</h2>
           <div class="school-grid" aria-label="Supported schools">
             <span>CUHK</span>
+            <span>港中文商学院</span>
             <span>HKU</span>
             <span>HKUST</span>
             <span>NTU</span>
-            <span>NUS（不含商学院）</span>
+            <span>南洋商学院 (NTU NBS)</span>
+            <span>NUS</span>
           </div>
+          <p>NTU 主申请系统 + 南洋商学院独立申请系统 + 港中文研究生主系统 + 港中文商学院独立申请系统均会支持；正式上架前会完成全部适配。NUS 商学院走 NUS 主系统，不是独立 portal。</p>
         </div>
         <div class="unsupported-panel">
           <h2>暂不支持的场景</h2>
           <ul>
-            <li>NUS 商学院申请系统。</li>
             <li>文件上传、视频录制、付款页面和最终提交页。</li>
             <li>当前不属于支持学校的页面。</li>
             <li>学校页面临时改版后尚未适配的新字段。</li>
@@ -127,7 +130,7 @@
                 <span>企业版月付</span>
               </button>
               <button class="plan-option" type="button" data-plan-id="ENTERPRISE_YEARLY" aria-pressed="false">
-                <strong>¥2999/年</strong>
+                <strong>¥2399/年</strong>
                 <span>企业版年付</span>
               </button>
             </div>
@@ -146,7 +149,7 @@
             </div>
             <div>
               <dt>续费规则</dt>
-              <dd>订阅到期后按届时公布的原价续费；当前价格为个人版 ¥99/月或 ¥699/年，企业版 ¥399/月或 ¥2999/年。</dd>
+              <dd>订阅到期后按届时公布的原价续费；当前价格为个人版 ¥99/月或 ¥699/年，企业版 ¥399/月或 ¥2399/年。</dd>
             </div>
             <div>
               <dt>发码时间</dt>
@@ -155,23 +158,45 @@
           </dl>
         </div>
 
-        <div class="qr-grid">
-          <article class="qr-panel">
+        <div class="payment-actions">
+          <article class="payment-method">
             <h3>微信支付</h3>
-            <div class="qr-placeholder" role="img" aria-label="WeChat payment QR placeholder">
-              <span>微信收款码</span>
-            </div>
-            <p>请备注订单号。</p>
+            <p>点击后在单独支付窗口查看微信收款码。</p>
+            <button class="payment-method-btn" type="button" data-payment-method="wechat">打开微信支付窗口</button>
           </article>
-          <article class="qr-panel">
+          <article class="payment-method">
             <h3>支付宝</h3>
-            <div class="qr-placeholder qr-alipay" role="img" aria-label="Alipay payment QR placeholder">
-              <span>支付宝收款码</span>
-            </div>
-            <p>请备注订单号。</p>
+            <p>点击后在单独支付窗口查看支付宝收款码。</p>
+            <button class="payment-method-btn" type="button" data-payment-method="alipay">打开支付宝支付窗口</button>
           </article>
         </div>
       </section>
+
+      <dialog id="payment-dialog" class="payment-dialog" aria-labelledby="payment-dialog-title">
+        <form method="dialog" class="payment-dialog-card">
+          <div class="payment-dialog-header">
+            <div>
+              <p class="eyebrow">付款二维码</p>
+              <h2 id="payment-dialog-title">微信支付</h2>
+            </div>
+            <button id="close-payment-dialog-btn" class="dialog-close" type="submit" aria-label="关闭付款窗口">×</button>
+          </div>
+          <div id="dialog-qr-box" class="dialog-qr-box" role="img" aria-label="Payment QR placeholder">
+            <span id="dialog-qr-label">微信收款码</span>
+          </div>
+          <dl class="dialog-payment-meta">
+            <div>
+              <dt>当前套餐</dt>
+              <dd id="dialog-plan-label">个人版 · ¥699/年</dd>
+            </div>
+            <div>
+              <dt>付款备注</dt>
+              <dd id="dialog-payment-note">AE-00000000-0000 PERSONAL_YEARLY user@example.com</dd>
+            </div>
+          </dl>
+          <p class="dialog-note">付款时请备注订单号、套餐和邮箱。完成付款后，请将付款截图、订单号、邮箱发送给客服以便人工发码。</p>
+        </form>
+      </dialog>
 
       <section id="faq" class="faq-band" aria-label="常见问题">
         <div class="section-heading">
@@ -179,72 +204,72 @@
           <h2>常见问题</h2>
           <p>购买前请先确认功能边界、续费和技术支持规则。</p>
         </div>
-        <div class="faq-grid">
-          <article class="faq-item">
-            <h3>如何续费？</h3>
-            <p>当前为人工续费流程。套餐到期前或到期后，您可以在本页重新选择个人版或企业版套餐，付款时备注订单号、套餐和邮箱。确认到账后，我们会发放新的激活码；新激活码从首次激活时开始计时。</p>
-          </article>
-          <article class="faq-item">
-            <h3>遇到技术问题怎么办？</h3>
+        <div class="accordion-list">
+          <details class="accordion-item">
+            <summary>如何续费？</summary>
+            <p>当前为人工续费流程。套餐到期前或到期后，您可以在本页重新选择个人版或企业版套餐，付款时备注订单号、套餐和邮箱。确认到账后，我们会发放新的续费激活码；若您在当前套餐到期前兑换，会从原到期日继续顺延。若套餐已过期，会从续费兑换时间重新开始计时。</p>
+          </details>
+          <details class="accordion-item">
+            <summary>遇到技术问题怎么办？</summary>
             <p>请通过客服提供订单号、插件版本、Chrome 版本、学校名称、页面类型和问题描述。若属于 ApplyEase 在已声明支持学校页面上的技术问题，我们会协助排查；因排查和修复耽误的有效使用天数，会在确认后补回。</p>
             <p>如果问题导致核心自动填写功能无法在已声明支持的学校申请页面使用，且我们无法在合理时间内修复或提供替代方案，可申请退款。</p>
-          </article>
-          <article class="faq-item">
-            <h3>支持填写哪些内容？</h3>
+          </details>
+          <details class="accordion-item">
+            <summary>支持填写哪些内容？</summary>
             <p>ApplyEase 主要支持从本地学生档案填写学校申请表中的结构化字段，例如个人信息、联系方式、教育经历、考试成绩、推荐人、工作/实习经历、奖项、活动、发表/研究经历，以及部分学校特定问题。</p>
-          </article>
-          <article class="faq-item">
-            <h3>哪些内容暂不支持？</h3>
-            <p>暂不支持 NUS 商学院申请系统、文件上传、视频录制、付款页面、最终提交页、未适配学校页面，以及需要人工判断、创作或改写申请内容的场景。提交前仍需您自行核对全部信息。</p>
-          </article>
-          <article class="faq-item">
-            <h3>个人版 XLSX 上传有什么限制？</h3>
+          </details>
+          <details class="accordion-item">
+            <summary>哪些内容暂不支持？</summary>
+            <p>暂不支持文件上传、视频录制、付款页面、最终提交页、未适配学校页面，以及需要人工判断、创作或改写申请内容的场景。提交前仍需您自行核对全部信息。</p>
+          </details>
+          <details class="accordion-item">
+            <summary>个人版 XLSX 上传有什么限制？</summary>
             <p>个人版计划只允许使用一次 XLSX 资料模板上传，用于创建初始档案。完成首次上传后，后续资料修改需要在插件内编辑，避免频繁更换档案造成授权滥用。企业版的上传限制仍在设计中，正式上线前会在页面和插件内明确说明。</p>
-          </article>
-          <article class="faq-item">
-            <h3>以后会增加哪些功能？价格会变化吗？</h3>
+          </details>
+          <details class="accordion-item">
+            <summary>以后会增加哪些功能？价格会变化吗？</summary>
             <p>我们计划评估更多学校、更多申请系统适配、B 端学生进度看板、资料收集 XLSX 模板，以及在合规可控前提下支持更多手动环节。随着功能增加，价格未来可能上调；已购买并持续续费的老用户，我们会尽量保留原套餐价格或提供过渡方案。</p>
-          </article>
+          </details>
         </div>
       </section>
 
       <section id="policies" class="policy-band">
         <div class="policy-list">
-          <article id="refund" class="policy-item">
-            <h2>退款政策</h2>
+          <details id="refund" class="accordion-item policy-item">
+            <summary>退款政策</summary>
             <p>激活码一经发放，原则上不支持退款。若因 ApplyEase 技术问题导致核心功能无法在已声明支持的学校申请页面使用，且我们无法在合理时间内修复或提供替代方案，可申请退款。</p>
             <p>以下情况不支持退款：用户填写信息错误、学校系统临时变更但仍可手动提交、未按说明备注订单号、用户自行卸载或停止使用、学校政策或申请资格变化。</p>
-          </article>
+          </details>
 
-          <article id="terms" class="policy-item">
-            <h2>服务条款</h2>
+          <details id="terms" class="accordion-item policy-item">
+            <summary>服务条款</summary>
             <p>ApplyEase 是申请表辅助填写工具，不替用户作出申请决定，不保证录取结果，也不会自动完成最终提交、付款、文件上传或视频录制。用户必须在提交前自行核对所有信息。</p>
             <p>激活码仅限购买者或购买机构在授权范围内使用，不得转售、公开分享或用于未授权账号。企业版最多管理 30 位学生档案。</p>
-          </article>
+          </details>
 
-          <article id="privacy" class="policy-item">
-            <h2>隐私政策</h2>
+          <details id="privacy" class="accordion-item policy-item">
+            <summary>隐私政策</summary>
             <p>ApplyEase 扩展内的学生申请资料默认保存在用户本地浏览器的 Chrome storage 中，不上传到 ApplyEase 服务器，不发送给 AI 服务。扩展会在用户点击开始填表后读取当前支持学校页面的表单结构，并根据本地档案写入表单字段。</p>
             <p>购买激活码时，我们可能处理订单号、所选套餐、付款截图、邮箱、微信或支付宝联系信息，用于确认付款、发放激活码、处理技术支持和必要的售后沟通。我们不会出售用户数据，也不会将申请资料用于广告。</p>
             <p>默认情况下，ApplyEase 不会自动上传诊断日志。若您遇到技术问题，我们可能请您主动导出并发送诊断信息；诊断信息应限于插件版本、Chrome 版本、学校、页面类型、错误类型和失败字段标识等排查所需信息，不应包含学生申请资料正文、证件号、联系方式、文书或截图中的敏感内容。</p>
             <p>Use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
-          </article>
+          </details>
 
-          <article id="support-policy" class="policy-item">
-            <h2>技术支持与诊断</h2>
+          <details id="support-policy" class="accordion-item policy-item">
+            <summary>技术支持与诊断</summary>
             <p>如自动填写在已声明支持的学校申请页面无法正常使用，请通过下方联系方式提供订单号、插件版本、Chrome 版本、学校名称、页面类型和问题描述。请不要直接发送完整学生档案、证件号、文书、推荐信或包含敏感信息的截图。</p>
             <p>付费用户的普通技术支持请求我们会尽量在 3 个工作日内回复；若 Chrome Web Store 或 Google 将某项支持或产品问题标记为 urgent，我们会优先处理。</p>
-          </article>
+          </details>
 
-          <article id="contact" class="policy-item">
-            <h2>联系方式</h2>
+          <details id="contact" class="accordion-item policy-item">
+            <summary>联系方式</summary>
             <p>客服微信：applyease-support-placeholder</p>
             <p>邮箱：support@applyease.cn</p>
-          </article>
+          </details>
         </div>
       </section>
     </main>
 
-    <script src="checkout.js"></script>
+    <script src="checkout.js?v=20260530"></script>
   </body>
 </html>
