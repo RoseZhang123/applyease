@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ApplyEase Checkout</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Cpath d='M9 22 15 8h3l6 14h-3l-1.2-3H13.2L12 22H9Zm5.2-5.7h4.6L16.5 11l-2.3 5.3Z' fill='white'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="checkout.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ApplyEase</p>
+        <h1>购买激活码</h1>
+      </div>
+      <a class="top-link" href="#policies">政策说明</a>
+    </header>
+
+    <main>
+      <section class="checkout-band">
+        <div class="checkout-intro">
+          <p class="notice">付款由 ApplyEase 提供并处理，并非 Google 或 Chrome Web Store 收款。购买前请确认套餐、续费和退款规则。</p>
+          <div class="order-strip" aria-label="Order number">
+            <span>订单号</span>
+            <strong id="order-id">AE-00000000-0000</strong>
+            <button id="copy-order-btn" type="button">复制</button>
+          </div>
+          <p class="hint">付款备注请填写订单号和邮箱，例如：<span id="payment-note">AE-00000000-0000 user@example.com</span></p>
+        </div>
+
+        <div class="plans" aria-label="ApplyEase plans">
+          <article class="plan">
+            <div>
+              <h2>C 端个人版</h2>
+              <p>适合单个学生管理自己的申请档案并自动填写支持学校表单。</p>
+            </div>
+            <div class="prices">
+              <button class="plan-option" type="button" data-plan-id="C_MONTHLY" aria-pressed="false">
+                <strong>¥99/月</strong>
+                <span>C 端月付</span>
+              </button>
+              <button class="plan-option" type="button" data-plan-id="C_YEARLY" aria-pressed="true">
+                <strong>¥699/年</strong>
+                <span>C 端年付</span>
+              </button>
+            </div>
+          </article>
+          <article class="plan">
+            <div>
+              <h2>B 端机构版</h2>
+              <p>适合机构顾问管理最多 30 位学生档案并批量辅助填写。</p>
+            </div>
+            <div class="prices">
+              <button class="plan-option" type="button" data-plan-id="B_MONTHLY" aria-pressed="false">
+                <strong>¥399/月</strong>
+                <span>B 端月付</span>
+              </button>
+              <button class="plan-option" type="button" data-plan-id="B_YEARLY" aria-pressed="false">
+                <strong>¥2999/年</strong>
+                <span>B 端年付</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="payment-band" aria-label="Payment methods">
+        <div class="payment-copy">
+          <h2>选择付款方式</h2>
+          <p>当前为人工发码流程：完成付款后，请将付款截图、订单号、邮箱发送给客服。我们会在确认到账后发送激活码。</p>
+          <dl>
+            <div>
+              <dt>当前选择</dt>
+              <dd id="selected-plan-label">C 端个人版 · ¥699/年</dd>
+            </div>
+            <div>
+              <dt>续费规则</dt>
+              <dd>订阅到期后按届时公布的原价续费；当前价格为 C 端 ¥99/月或 ¥699/年，B 端 ¥399/月或 ¥2999/年。</dd>
+            </div>
+            <div>
+              <dt>发码时间</dt>
+              <dd>人工确认后通常 24 小时内发送激活码。高峰期或跨时区沟通可能略有延迟。</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="qr-grid">
+          <article class="qr-panel">
+            <h3>微信支付</h3>
+            <div class="qr-placeholder" role="img" aria-label="WeChat payment QR placeholder">
+              <span>微信收款码</span>
+            </div>
+            <p>请备注订单号。</p>
+          </article>
+          <article class="qr-panel">
+            <h3>支付宝</h3>
+            <div class="qr-placeholder qr-alipay" role="img" aria-label="Alipay payment QR placeholder">
+              <span>支付宝收款码</span>
+            </div>
+            <p>请备注订单号。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="policies" class="policy-band">
+        <div class="policy-list">
+          <article id="refund" class="policy-item">
+            <h2>退款政策</h2>
+            <p>激活码一经发放，原则上不支持退款。若因 ApplyEase 技术问题导致核心功能无法在已声明支持的学校申请页面使用，且我们无法在合理时间内修复或提供替代方案，可申请退款。</p>
+            <p>以下情况不支持退款：用户填写信息错误、学校系统临时变更但仍可手动提交、未按说明备注订单号、用户自行卸载或停止使用、学校政策或申请资格变化。</p>
+          </article>
+
+          <article id="terms" class="policy-item">
+            <h2>服务条款</h2>
+            <p>ApplyEase 是申请表辅助填写工具，不替用户作出申请决定，不保证录取结果，也不会自动完成最终提交、付款、文件上传或视频录制。用户必须在提交前自行核对所有信息。</p>
+            <p>激活码仅限购买者或购买机构在授权范围内使用，不得转售、公开分享或用于未授权账号。B 端机构版最多管理 30 位学生档案。</p>
+          </article>
+
+          <article id="privacy" class="policy-item">
+            <h2>隐私政策</h2>
+            <p>ApplyEase 扩展内的学生申请资料默认保存在用户本地浏览器的 Chrome storage 中，不上传到 ApplyEase 服务器。扩展会在用户点击开始填表后读取当前支持学校页面的表单结构，并根据本地档案写入表单字段。</p>
+            <p>购买激活码时，我们可能处理订单号、付款截图、邮箱、微信或支付宝联系信息，用于确认付款、发放激活码、处理技术支持和必要的售后沟通。我们不会出售用户数据，也不会将申请资料用于广告。</p>
+            <p>Use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+          </article>
+
+          <article id="contact" class="policy-item">
+            <h2>联系方式</h2>
+            <p>客服微信：applyease-support-placeholder</p>
+            <p>邮箱：support@applyease.cn</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>
