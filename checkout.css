@@ -59,23 +59,6 @@ nav,
   text-decoration: none;
 }
 
-.brand-copy {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-
-.brand-copy strong {
-  color: var(--ink);
-  font-size: 15px;
-}
-
-.brand-copy span {
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 750;
-}
-
 .brand-mark {
   display: grid;
   width: 30px;
@@ -99,10 +82,17 @@ nav a,
   text-decoration: none;
 }
 
+h1,
 h2,
 h3,
 p {
   margin: 0;
+}
+
+h1 {
+  color: var(--ink);
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.2;
 }
 
 h2 {
@@ -131,12 +121,18 @@ div[id] {
   scroll-margin-top: 84px;
 }
 
+.hero-band,
 .product-band,
 .pricing-band,
 .faq-band,
 .policy-band,
 .contact-band {
   padding: 34px clamp(18px, 5vw, 64px);
+}
+
+.hero-band {
+  padding-top: 28px;
+  padding-bottom: 18px;
 }
 
 .pricing-band,
@@ -237,7 +233,7 @@ button:hover,
 }
 
 .product-subsection {
-  padding: 24px 0;
+  padding: 26px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -248,19 +244,17 @@ button:hover,
 
 .feature-list {
   display: grid;
-  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
   padding: 0;
   margin: 0;
   list-style: none;
-  border-top: 1px solid var(--line);
 }
 
 .feature-list li {
   display: grid;
-  grid-template-columns: minmax(180px, 0.28fr) 1fr;
-  gap: 22px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
+  gap: 8px;
+  padding: 0;
 }
 
 .feature-list strong {
@@ -703,14 +697,12 @@ dd {
     flex-wrap: wrap;
   }
 
-  .brand-copy {
-    flex-wrap: wrap;
-    row-gap: 2px;
+  .feature-list li {
+    gap: 4px;
   }
 
-  .feature-list li {
+  .feature-list {
     grid-template-columns: 1fr;
-    gap: 4px;
   }
 
   .workflow-list {
