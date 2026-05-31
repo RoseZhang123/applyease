@@ -117,7 +117,6 @@ main {
 .hero-band,
 .product-band,
 .pricing-band,
-.payment-band,
 .faq-band,
 .policy-band,
 .contact-band {
@@ -393,18 +392,13 @@ dt {
   font-weight: 850;
 }
 
-.payment-band {
-  display: grid;
-  grid-template-columns: 1fr;
-  background: #ffffff;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
 .payment-copy {
   display: grid;
   gap: 14px;
-  padding: 22px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fafc;
   box-shadow: none;
 }
 
@@ -675,8 +669,7 @@ dd {
 @media (max-width: 820px) {
   .topbar,
   .hero-band,
-  .scope-band,
-  .payment-band {
+  .scope-band {
     grid-template-columns: 1fr;
   }
 
