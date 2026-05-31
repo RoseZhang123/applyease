@@ -119,6 +119,7 @@ main {
 .scope-band,
 .pricing-band,
 .payment-band,
+.workflow-band,
 .faq-band,
 .policy-band {
   padding: 34px clamp(18px, 5vw, 64px);
@@ -137,6 +138,7 @@ main {
 .accordion-item,
 .policy-item,
 .plan,
+.workflow-list li,
 .payment-dialog-card,
 .feature-band article {
   border: 1px solid var(--line);
@@ -237,6 +239,58 @@ button:hover,
   display: grid;
   gap: 10px;
   padding: 20px;
+}
+
+.workflow-band {
+  display: grid;
+  gap: 18px;
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+}
+
+.workflow-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: workflow;
+}
+
+.workflow-list li {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  padding: 18px 18px 18px 58px;
+  box-shadow: none;
+  counter-increment: workflow;
+}
+
+.workflow-list li::before {
+  content: counter(workflow);
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 7px;
+  background: var(--blue-soft);
+  color: var(--primary-dark);
+  font-weight: 900;
+}
+
+.workflow-list strong {
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.workflow-list span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .feature-icon {
@@ -573,9 +627,56 @@ dd {
 
 .policy-item {
   display: grid;
-  gap: 10px;
-  padding: 18px;
+  gap: 0;
+  padding: 0;
   box-shadow: none;
+}
+
+.policy-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 14px 18px;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 850;
+  cursor: pointer;
+  list-style: none;
+}
+
+.policy-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.policy-item summary::after {
+  content: "+";
+  display: grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--primary);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.policy-item[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.policy-item[open] summary::after {
+  content: "-";
+}
+
+.policy-item p {
+  padding: 0 18px 14px;
+}
+
+.policy-item p:first-of-type {
+  padding-top: 14px;
 }
 
 @media (max-width: 820px) {
@@ -596,6 +697,10 @@ dd {
   }
 
   .feature-band {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-list {
     grid-template-columns: 1fr;
   }
 
