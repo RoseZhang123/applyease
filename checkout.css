@@ -60,13 +60,31 @@ nav,
 }
 
 .brand-mark {
-  display: grid;
+  position: relative;
+  display: block;
   width: 30px;
   height: 30px;
-  place-items: center;
   border-radius: 7px;
   background: var(--primary);
   color: #ffffff;
+}
+
+.brand-a {
+  position: absolute;
+  left: 8px;
+  top: 5px;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.brand-e {
+  position: absolute;
+  right: 6px;
+  top: 5px;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1;
 }
 
 nav {
