@@ -89,8 +89,8 @@ p {
 }
 
 h1 {
-  font-size: clamp(30px, 4vw, 52px);
-  line-height: 1.12;
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.2;
 }
 
 h2 {
@@ -115,11 +115,9 @@ main {
 }
 
 .hero-band,
-.feature-band,
-.scope-band,
+.product-band,
 .pricing-band,
 .payment-band,
-.workflow-band,
 .faq-band,
 .policy-band,
 .contact-band {
@@ -129,10 +127,10 @@ main {
 .hero-band {
   display: grid;
   grid-template-columns: 1fr;
-  padding-top: 34px;
+  padding-top: 28px;
+  padding-bottom: 18px;
 }
 
-.hero-copy,
 .pricing-band,
 .payment-copy,
 .unsupported-panel,
@@ -147,13 +145,6 @@ main {
   border-radius: 8px;
   background: var(--panel);
   box-shadow: var(--shadow);
-}
-
-.hero-copy {
-  display: grid;
-  gap: 18px;
-  padding: clamp(22px, 3.2vw, 36px);
-  width: 100%;
 }
 
 .eyebrow {
@@ -238,6 +229,13 @@ button:hover,
   gap: 16px;
 }
 
+.product-band {
+  display: grid;
+  gap: 22px;
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+}
+
 .feature-band article {
   display: grid;
   gap: 10px;
@@ -247,8 +245,6 @@ button:hover,
 .workflow-band {
   display: grid;
   gap: 18px;
-  background: #ffffff;
-  border-top: 1px solid var(--line);
 }
 
 .workflow-list {
@@ -311,9 +307,6 @@ button:hover,
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(280px, 0.9fr);
   gap: 20px;
-  background: #ffffff;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 
 .scope-band > div:first-child {
