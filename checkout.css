@@ -388,7 +388,9 @@ dt {
 .plan {
   display: grid;
   grid-template-columns: 1fr auto;
+  align-items: center;
   gap: 16px;
+  min-height: 156px;
   padding: 22px;
   box-shadow: none;
 }
