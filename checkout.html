@@ -56,7 +56,6 @@
       <section id="workflow" class="workflow-band" aria-label="How ApplyEase works">
         <div class="section-heading">
           <p class="eyebrow">使用流程</p>
-          <h2>从激活到开始填写，按这几步完成。</h2>
         </div>
         <ol class="workflow-list">
           <li><strong>输入 activation code。</strong><span>激活后进入 ApplyEase 插件。</span></li>
@@ -71,7 +70,6 @@
       <section id="support" class="scope-band">
         <div>
           <p class="eyebrow">支持学校</p>
-          <h2>当前覆盖港新五校常见申请表。</h2>
           <div class="school-grid" aria-label="Supported schools">
             <span>香港中文大学（CUHK）</span>
             <span>香港中文大学商学院（CUHK Business School）</span>
@@ -97,16 +95,9 @@
       <section id="pricing" class="pricing-band">
         <div class="section-heading">
           <p class="eyebrow">购买激活码</p>
-          <h2>选择套餐后付款，人工确认后发放激活码。</h2>
-          <p>付款前请确认套餐、续费和退款规则。激活码从首次激活时开始计时。</p>
+          <h2>确定套餐后付款，人工确认后发放激活码。</h2>
+          <p>付款前请确认套餐、续费和退款规则。付款后请留下微信或邮箱，用于接收 activation code。激活码从首次激活时开始计时。</p>
         </div>
-
-        <div class="order-strip" aria-label="Order number">
-          <span>订单号</span>
-          <strong id="order-id">AE-00000000-0000</strong>
-          <button id="copy-order-btn" type="button">复制</button>
-        </div>
-        <p class="hint">付款备注请填写订单号、套餐和邮箱，例如：<span id="payment-note">AE-00000000-0000 PERSONAL_YEARLY user@example.com</span></p>
 
         <div class="plans" aria-label="ApplyEase plans">
           <article class="plan">
@@ -115,14 +106,14 @@
               <p>适合单个学生使用。</p>
             </div>
             <div class="prices">
-              <button class="plan-option" type="button" data-plan-id="PERSONAL_MONTHLY" aria-pressed="false">
+              <div class="plan-option" data-plan-id="PERSONAL_MONTHLY">
                 <strong>¥99/月</strong>
                 <span>个人版月付</span>
-              </button>
-              <button class="plan-option" type="button" data-plan-id="PERSONAL_YEARLY" aria-pressed="true">
+              </div>
+              <div class="plan-option" data-plan-id="PERSONAL_YEARLY">
                 <strong>¥699/年</strong>
                 <span>个人版年付</span>
-              </button>
+              </div>
             </div>
           </article>
           <article class="plan featured-plan">
@@ -131,33 +122,29 @@
               <p>适合机构管理最多 30 位学生档案。</p>
             </div>
             <div class="prices">
-              <button class="plan-option" type="button" data-plan-id="ENTERPRISE_MONTHLY" aria-pressed="false">
+              <div class="plan-option" data-plan-id="ENTERPRISE_MONTHLY">
                 <strong>¥399/月</strong>
                 <span>企业版月付</span>
-              </button>
-              <button class="plan-option" type="button" data-plan-id="ENTERPRISE_YEARLY" aria-pressed="false">
+              </div>
+              <div class="plan-option" data-plan-id="ENTERPRISE_YEARLY">
                 <strong>¥2399/年</strong>
                 <span>企业版年付</span>
-              </button>
+              </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="payment-band" aria-label="Payment methods">
+      <section id="payment" class="payment-band" aria-label="Payment methods">
         <div class="payment-copy">
           <h2>付款方式</h2>
-          <p>当前为人工发码流程：完成付款后，请将付款截图、订单号、邮箱发送给客服。我们会在确认到账后发送激活码。</p>
+          <p>当前为人工发码流程：完成付款后，请将付款截图、所选套餐、微信或邮箱发送给客服。我们会在确认到账后发送激活码。</p>
           <p>付款由 ApplyEase 处理，并非 Google 或 Chrome Web Store 收款。</p>
           <div class="payment-buttons" aria-label="选择付款方式">
             <button class="payment-method-btn" type="button" data-payment-method="wechat">微信支付</button>
             <button class="payment-method-btn" type="button" data-payment-method="alipay">支付宝支付</button>
           </div>
           <dl>
-            <div>
-              <dt>当前选择</dt>
-              <dd id="selected-plan-label">个人版 · ¥699/年</dd>
-            </div>
             <div>
               <dt>续费规则</dt>
               <dd>订阅到期后按届时公布的原价续费；当前价格为个人版 ¥99/月或 ¥699/年，企业版 ¥399/月或 ¥2399/年。</dd>
@@ -184,15 +171,11 @@
           </div>
           <dl class="dialog-payment-meta">
             <div>
-              <dt>当前套餐</dt>
-              <dd id="dialog-plan-label">个人版 · ¥699/年</dd>
-            </div>
-            <div>
-              <dt>付款备注</dt>
-              <dd id="dialog-payment-note">AE-00000000-0000 PERSONAL_YEARLY user@example.com</dd>
+              <dt>付款后请发送</dt>
+              <dd>付款截图、所选套餐、微信或邮箱</dd>
             </div>
           </dl>
-          <p class="dialog-note">付款时请备注订单号、套餐和邮箱。完成付款后，请将付款截图、订单号、邮箱发送给客服以便人工发码。</p>
+          <p class="dialog-note">完成付款后，请将付款截图、所选套餐、微信或邮箱发送给客服，以便人工确认并发放 activation code。</p>
         </form>
       </dialog>
 
@@ -208,7 +191,7 @@
             <div class="accordion-list">
               <details class="accordion-item">
                 <summary>如何续费？</summary>
-                <p>当前为人工续费流程。套餐到期前或到期后，您可以在本页重新选择个人版或企业版套餐，付款时备注订单号、套餐和邮箱。确认到账后，我们会发放新的续费激活码；若您在当前套餐到期前兑换，会从原到期日继续顺延。若套餐已过期，会从续费兑换时间重新开始计时。</p>
+                <p>当前为人工续费流程。套餐到期前或到期后，您可以在本页确认个人版或企业版套餐，付款后把付款截图、所选套餐、微信或邮箱发送给客服。确认到账后，我们会发放新的续费激活码；若您在当前套餐到期前兑换，会从原到期日继续顺延。若套餐已过期，会从续费兑换时间重新开始计时。</p>
               </details>
               <details class="accordion-item">
                 <summary>是否提供免费使用？</summary>
@@ -248,12 +231,12 @@
             <div class="accordion-list">
               <details class="accordion-item">
                 <summary>遇到技术问题怎么办？</summary>
-                <p>请通过客服提供订单号、插件版本、Chrome 版本、学校名称、页面类型和问题描述。若属于 ApplyEase 在已声明支持学校页面上的技术问题，我们会协助排查；因排查和修复耽误的有效使用天数，会在确认后补回。</p>
+                <p>请通过客服提供购买时留下的微信或邮箱、插件版本、Chrome 版本、学校名称、页面类型和问题描述。若属于 ApplyEase 在已声明支持学校页面上的技术问题，我们会协助排查；因排查和修复耽误的有效使用天数，会在确认后补回。</p>
                 <p>如果问题导致核心自动填写功能无法在已声明支持的学校申请页面使用，且我们无法在合理时间内修复或提供替代方案，可申请退款。</p>
               </details>
               <details class="accordion-item">
                 <summary>需要提供哪些诊断信息？</summary>
-                <p>通常需要订单号、插件版本、Chrome 版本、学校名称、页面类型和错误描述。请不要直接发送完整学生档案、证件号、文书、推荐信或包含敏感信息的截图。</p>
+                <p>通常需要购买时留下的微信或邮箱、插件版本、Chrome 版本、学校名称、页面类型和错误描述。请不要直接发送完整学生档案、证件号、文书、推荐信或包含敏感信息的截图。</p>
               </details>
             </div>
           </section>
@@ -284,7 +267,7 @@
           <details id="refund" class="policy-item">
             <summary>退款政策</summary>
             <p>激活码一经发放，原则上不支持退款。若因 ApplyEase 技术问题导致核心功能无法在已声明支持的学校申请页面使用，且我们无法在合理时间内修复或提供替代方案，可申请退款。</p>
-            <p>以下情况不支持退款：用户填写信息错误、学校系统临时变更但仍可手动提交、未按说明备注订单号、用户自行卸载或停止使用、学校政策或申请资格变化。</p>
+            <p>以下情况不支持退款：用户填写信息错误、学校系统临时变更但仍可手动提交、未按说明留下可联系的微信或邮箱、用户自行卸载或停止使用、学校政策或申请资格变化。</p>
           </details>
 
           <details id="terms" class="policy-item">
@@ -296,14 +279,14 @@
           <details id="privacy" class="policy-item">
             <summary>隐私政策</summary>
             <p>ApplyEase 扩展内的学生申请资料默认保存在用户本地浏览器的 Chrome storage 中，不上传到 ApplyEase 服务器，不发送给 AI 服务。扩展会在用户点击开始填表后读取当前支持学校页面的表单结构，并根据本地档案写入表单字段。</p>
-            <p>购买激活码时，我们可能处理订单号、所选套餐、付款截图、邮箱、微信或支付宝联系信息，用于确认付款、发放激活码、处理技术支持和必要的售后沟通。我们不会出售用户数据，也不会将申请资料用于广告。</p>
+            <p>购买激活码时，我们可能处理所选套餐、付款截图、邮箱、微信或支付宝联系信息，用于确认付款、发放激活码、处理技术支持和必要的售后沟通。我们不会出售用户数据，也不会将申请资料用于广告。</p>
             <p>默认情况下，ApplyEase 不会自动上传诊断日志。若您遇到技术问题，我们可能请您主动导出并发送诊断信息；诊断信息应限于插件版本、Chrome 版本、学校、页面类型、错误类型和失败字段标识等排查所需信息，不应包含学生申请资料正文、证件号、联系方式、文书或截图中的敏感内容。</p>
             <p>Use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
           </details>
 
           <details id="support-policy" class="policy-item">
             <summary>技术支持与诊断</summary>
-            <p>如自动填写在已声明支持的学校申请页面无法正常使用，请通过下方联系方式提供订单号、插件版本、Chrome 版本、学校名称、页面类型和问题描述。请不要直接发送完整学生档案、证件号、文书、推荐信或包含敏感信息的截图。</p>
+            <p>如自动填写在已声明支持的学校申请页面无法正常使用，请通过下方联系方式提供购买时留下的微信或邮箱、插件版本、Chrome 版本、学校名称、页面类型和问题描述。请不要直接发送完整学生档案、证件号、文书、推荐信或包含敏感信息的截图。</p>
             <p>付费用户的普通技术支持请求我们会尽量在 3 个工作日内回复；若 Chrome Web Store 或 Google 将某项支持或产品问题标记为 urgent，我们会优先处理。</p>
           </details>
         </div>

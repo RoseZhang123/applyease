@@ -348,28 +348,10 @@ button:hover,
   gap: 8px;
 }
 
-.order-strip {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: #f8fafc;
-}
-
-.order-strip span,
 dt {
   color: var(--muted);
   font-size: 13px;
   font-weight: 800;
-}
-
-.order-strip strong,
-.hint span {
-  color: var(--ink);
-  font-weight: 850;
 }
 
 .plans {
@@ -381,7 +363,7 @@ dt {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 16px;
-  padding: 18px;
+  padding: 22px;
   box-shadow: none;
 }
 
@@ -397,19 +379,14 @@ dt {
 
 .plan-option {
   display: grid;
-  gap: 3px;
-  min-width: 132px;
-  padding: 10px 12px;
+  gap: 6px;
+  min-width: 148px;
+  padding: 16px 18px;
   border: 1px solid var(--line);
+  border-radius: 7px;
   background: #ffffff;
   color: var(--ink);
   text-align: left;
-}
-
-.plan-option[aria-pressed="true"] {
-  border-color: var(--primary);
-  background: var(--blue-soft);
-  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.18);
 }
 
 .plan-option strong {
