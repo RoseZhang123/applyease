@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 84px;
 }
 
 body {
@@ -114,6 +115,11 @@ main {
   display: grid;
 }
 
+section[id],
+div[id] {
+  scroll-margin-top: 84px;
+}
+
 .hero-band,
 .product-band,
 .pricing-band,
@@ -138,8 +144,7 @@ main {
 .plan,
 .workflow-list li,
 .contact-list article,
-.payment-dialog-card,
-.feature-band article {
+.payment-dialog-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -224,21 +229,63 @@ button:hover,
 
 .feature-band {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(300px, 1.4fr);
+  gap: 24px;
+  align-items: start;
 }
 
 .product-band {
   display: grid;
-  gap: 22px;
+  gap: 0;
   background: #ffffff;
   border-top: 1px solid var(--line);
 }
 
-.feature-band article {
+.product-subsection {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+
+.product-subsection:first-of-type {
+  border-top: 0;
+  padding-top: 8px;
+}
+
+.feature-summary {
   display: grid;
   gap: 10px;
-  padding: 20px;
+}
+
+.feature-summary h2 {
+  max-width: 620px;
+}
+
+.feature-list {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.feature-list li {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.35fr) 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.feature-list strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.feature-list span {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .workflow-band {
@@ -289,17 +336,6 @@ button:hover,
   color: var(--muted);
   font-size: 14px;
   line-height: 1.5;
-}
-
-.feature-icon {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border-radius: 7px;
-  background: var(--blue-soft);
-  color: var(--primary-dark);
-  font-weight: 900;
 }
 
 .scope-band {
@@ -684,6 +720,11 @@ dd {
 
   .feature-band {
     grid-template-columns: 1fr;
+  }
+
+  .feature-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .workflow-list {
