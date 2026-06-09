@@ -2,8 +2,8 @@
   const PLAN_BY_ID = {
     PERSONAL_MONTHLY: { label: "个人版月付", amount: "¥99 / 月", requiresContact: false },
     PERSONAL_YEARLY: { label: "个人版年付", amount: "¥699 / 年", requiresContact: false },
-    ENTERPRISE_MONTHLY: { label: "企业版月付（内测咨询）", amount: "¥399 / 月", requiresContact: true },
-    ENTERPRISE_YEARLY: { label: "企业版年付（内测咨询）", amount: "¥2999 / 年", requiresContact: true }
+    ENTERPRISE_MONTHLY: { label: "企业版月付", amount: "¥399 / 月", requiresContact: false },
+    ENTERPRISE_YEARLY: { label: "企业版年付", amount: "¥2999 / 年", requiresContact: false }
   };
 
   const planButtons = Array.from(document.querySelectorAll("[data-plan-id]"));
