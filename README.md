@@ -18,10 +18,10 @@ Deployment:
 Current MVP payment model:
 
 - Personal plan: RMB 99/month or RMB 699/year.
-- Enterprise plan: RMB 399/month or RMB 2399/year.
+- Enterprise plan: RMB 399/month or RMB 2999/year. Enterprise checkout is consultation-first while the B-side workflow is in internal testing.
 - WeChat Pay and Alipay QR codes are placeholders until real receiving codes are added.
-- The page generates a client-side order number for manual reconciliation.
-- Users must include the order number and email in the payment note, then send payment proof to support.
+- The page generates a client-side order number for manual reconciliation after a plan is selected.
+- Users must include the order number and email/WeChat in the payment note. Enterprise users should contact support before paying.
 - Activation codes are issued manually after payment confirmation.
 
 Compliance notes:
