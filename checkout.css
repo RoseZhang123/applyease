@@ -5,7 +5,7 @@
 :root {
   color-scheme: light;
 
-  /* 配色：以信任蓝为主色，中性灰打底，绿色用于年付/省钱强调 */
+  /* 配色：以信任蓝为主色，中性灰打底，暖色用于边界提醒 */
   --bg: #eef2f8;
   --bg-grad-top: #f7f9fc;
   --ink: #101828;
@@ -21,8 +21,6 @@
   --primary-soft: #eef4ff;
   --primary-ring: rgba(37, 99, 235, 0.2);
 
-  --green: #15803d;
-  --green-soft: #ecfdf3;
   --warn-ink: #7c2d12;
   --warn-soft: #fff7ed;
   --warn-line: #fed7aa;
@@ -332,35 +330,6 @@ div[id] {
   flex-wrap: wrap;
   gap: var(--space-3);
   padding-top: var(--space-2);
-}
-
-.hero-billing-note {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-top: var(--space-2);
-  padding: 9px 14px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
-  color: var(--ink-soft);
-  font-size: var(--text-sm);
-  font-weight: 650;
-  width: fit-content;
-}
-
-.hero-billing-badge {
-  display: grid;
-  place-items: center;
-  width: 18px;
-  height: 18px;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background: var(--primary-soft);
-  color: var(--primary-dark);
-  font-size: 11px;
-  font-weight: 900;
-  font-style: italic;
 }
 
 .primary-link,
@@ -745,13 +714,6 @@ div[id] {
   gap: var(--space-3);
 }
 
-.footer-billing {
-  font-size: var(--text-sm);
-  color: var(--ink-soft);
-  line-height: 1.6;
-  max-width: 70ch;
-}
-
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -841,9 +803,6 @@ div[id] {
     flex: 1 1 auto;
   }
 
-  .hero-billing-note {
-    width: auto;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
