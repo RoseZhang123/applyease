@@ -15,14 +15,12 @@ Deployment:
 - Cloudflare Pages settings: framework preset `None`, build command empty, output directory `/`.
 - Push updates to `RoseZhang123/pages/main`; Cloudflare deploys automatically.
 
-Current MVP payment model:
+Current MVP pricing model:
 
 - Personal plan: RMB 99/month or RMB 699/year.
-- Enterprise plan: RMB 399/month or RMB 2999/year. Enterprise checkout is consultation-first while the B-side workflow is in internal testing.
-- WeChat Pay and Alipay QR codes are placeholders until real receiving codes are added.
-- The page generates a client-side order number for manual reconciliation after a plan is selected.
-- Users must include the order number and email/WeChat in the payment note. Enterprise users should contact support before paying.
-- Activation codes are issued manually after payment confirmation.
+- Enterprise plan: RMB 399/month or RMB 2999/year.
+- The checkout page only displays pricing information. Purchase is completed by contacting support through WeChat or email.
+- Activation codes are issued manually after purchase confirmation.
 
 Compliance notes:
 

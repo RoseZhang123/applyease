@@ -129,8 +129,8 @@
       <section id="pricing" class="pricing-band">
         <div class="section-heading">
           <p class="eyebrow">购买激活码</p>
-          <h2>确定套餐后付款，人工确认后发放激活码。</h2>
-          <p>付款前请确认套餐、续费和退款规则。付款备注必须留下可收信的邮箱，用于接收 activation code，并作为 license 绑定邮箱。激活码从首次激活时开始计时；付款由 ApplyEase 自行处理，并非 Google、Chrome 或 Chrome Web Store 收款。</p>
+          <h2>ApplyEase 套餐价格</h2>
+          <p>当前提供个人版和企业版两类激活码。激活码从首次激活时开始计时；付款由 ApplyEase 自行处理，并非 Google、Chrome 或 Chrome Web Store 收款。</p>
         </div>
 
         <div class="pricing-layout">
@@ -142,15 +142,15 @@
                   <p>适合单个学生使用。</p>
                 </div>
                 <div class="prices">
-                  <button class="plan-option" type="button" data-plan-id="PERSONAL_MONTHLY">
+                  <div class="price-option">
                     <strong>¥99 <em>/ 月</em></strong>
                     <span>个人版月付</span>
-                  </button>
-                  <button class="plan-option" type="button" data-plan-id="PERSONAL_YEARLY">
+                  </div>
+                  <div class="price-option">
                     <strong>¥699 <em>/ 年</em></strong>
                     <span>个人版年付</span>
                     <small>比月付节省 ¥489 / 年</small>
-                  </button>
+                  </div>
                 </div>
               </article>
               <article class="plan">
@@ -159,96 +159,22 @@
                   <p>适合机构批量管理多个学生档案。</p>
                 </div>
                 <div class="prices">
-                  <button class="plan-option" type="button" data-plan-id="ENTERPRISE_MONTHLY">
+                  <div class="price-option">
                     <strong>¥399 <em>/ 月</em></strong>
                     <span>企业版月付</span>
-                  </button>
-                  <button class="plan-option" type="button" data-plan-id="ENTERPRISE_YEARLY">
+                  </div>
+                  <div class="price-option">
                     <strong>¥2999 <em>/ 年</em></strong>
                     <span>企业版年付</span>
                     <small>比月付节省 ¥1789 / 年</small>
-                  </button>
+                  </div>
                 </div>
               </article>
             </div>
-
+            <p class="pricing-contact-note">购买请联系客服微信或邮箱。</p>
           </div>
-
-          <aside id="payment" class="payment-copy" aria-label="Payment methods">
-            <div class="payment-head">
-              <p class="eyebrow">付款方式</p>
-              <h2>选择套餐后扫码支付</h2>
-              <p class="payment-lede">先选择套餐，再打开微信或支付宝收款码。付款备注请填写您的购买邮箱即可；插件激活时需要输入同一个邮箱。</p>
-            </div>
-
-            <dl class="payment-summary">
-              <div class="payment-summary-plan">
-                <dt>已选套餐</dt>
-                <dd id="selected-plan-label">请先选择上方套餐</dd>
-              </div>
-              <div>
-                <dt>付款备注</dt>
-                <dd id="payment-remark-label">选择套餐后显示；付款备注填写您的购买邮箱即可。</dd>
-              </div>
-              <div>
-                <dt>收款说明</dt>
-                <dd>ApplyEase 自行收款和售后；Google、Chrome 和 Chrome Web Store 不是卖家、支付处理方或订阅管理方。</dd>
-              </div>
-              <div>
-                <dt>发码方式</dt>
-                <dd>人工确认后通常 24 小时内发送激活码。高峰期或跨时区沟通可能略有延迟。</dd>
-              </div>
-            </dl>
-
-            <div class="payment-buttons" aria-label="选择付款方式">
-              <button class="payment-method-btn" type="button" data-payment-method="wechat" disabled>
-                <span class="pay-mark wechat" aria-hidden="true">微</span>微信支付
-              </button>
-              <button class="payment-method-btn" type="button" data-payment-method="alipay" disabled>
-                <span class="pay-mark alipay" aria-hidden="true">支</span>支付宝支付
-              </button>
-            </div>
-            <p class="payment-hint">请先在上方选择套餐，付款按钮即可点击。</p>
-
-            <div class="payment-checklist" aria-label="付款前请确认">
-              <strong>付款前请确认</strong>
-              <a href="#refund">退款政策</a>
-              <a href="#privacy">隐私政策</a>
-              <a href="#terms">服务条款</a>
-            </div>
-          </aside>
         </div>
       </section>
-
-      <dialog id="payment-dialog" class="payment-dialog" aria-labelledby="payment-dialog-title">
-        <form method="dialog" class="payment-dialog-card">
-          <div class="payment-dialog-header">
-            <div>
-              <p class="eyebrow">付款二维码</p>
-              <h2 id="payment-dialog-title">微信支付</h2>
-            </div>
-            <button id="close-payment-dialog-btn" class="dialog-close" type="submit" aria-label="关闭付款窗口">×</button>
-          </div>
-          <div id="dialog-qr-box" class="dialog-qr-box" role="img" aria-label="Payment QR placeholder">
-            <span id="dialog-qr-label">微信收款码</span>
-          </div>
-          <dl class="dialog-payment-meta">
-            <div>
-              <dt>套餐与金额</dt>
-              <dd id="dialog-plan-label">请确认所选套餐</dd>
-            </div>
-            <div>
-              <dt>付款备注</dt>
-              <dd id="dialog-remark-label">请填写您的购买邮箱，用于接收 activation code 并绑定 license。</dd>
-            </div>
-            <div>
-              <dt>非 Google 收款</dt>
-              <dd>本付款由 ApplyEase 处理，不通过 Google、Chrome 或 Chrome Web Store。</dd>
-            </div>
-          </dl>
-          <p class="dialog-note">付款前请再次核对套餐金额；激活码发放后原则上不支持退款，详见本页退款政策。</p>
-        </form>
-      </dialog>
 
       <section id="faq" class="faq-band" aria-label="常见问题">
         <div class="section-heading">
@@ -261,8 +187,12 @@
             <h3 id="faq-billing-title">Billing / 购买与续费</h3>
             <div class="accordion-list">
               <details class="accordion-item">
+                <summary>如何购买激活码？</summary>
+                <p>本页只展示 pricing plan。购买请联系客服微信或邮箱；确认套餐后，我们会人工发放对应激活码。</p>
+              </details>
+              <details class="accordion-item">
                 <summary>如何续费？</summary>
-                <p>当前为人工续费流程。套餐到期前或到期后，您可以在本页确认个人版或企业版套餐，付款时备注购买邮箱。确认到账后，我们会发放新的续费激活码；插件会沿用您当前的 license_id。若您在当前套餐到期前兑换，会从原到期日继续顺延。若套餐已过期，会从续费兑换时间重新开始计时。</p>
+                <p>当前为人工续费流程。套餐到期前或到期后，您可以在本页确认个人版或企业版套餐，并通过客服完成续费确认。确认后我们会发放新的续费激活码；插件会沿用您当前的 license_id。若您在当前套餐到期前兑换，会从原到期日继续顺延。若套餐已过期，会从续费兑换时间重新开始计时。</p>
               </details>
               <details class="accordion-item">
                 <summary>是否提供免费使用？</summary>
@@ -327,7 +257,7 @@
             <div class="accordion-list">
               <details class="accordion-item">
                 <summary>企业版适合谁？</summary>
-                <p>企业版面向机构顾问集中管理多个学生档案的场景。该能力仍在内测，当前设计上限为 30 位学生档案；付款前请先联系客服确认是否适合您的工作流。</p>
+                <p>企业版面向机构顾问集中管理多个学生档案的场景。该能力仍在内测，当前设计上限为 30 位学生档案；购买请联系客服微信或邮箱确认是否适合您的工作流。</p>
               </details>
               <details class="accordion-item">
                 <summary>企业版可以多人共用一个 activation code 吗？</summary>
@@ -360,7 +290,7 @@
           <details id="privacy" class="policy-item">
             <summary>隐私政策</summary>
             <p>ApplyEase 扩展内的学生申请资料默认保存在用户本地浏览器的 Chrome storage 中，不上传到 ApplyEase 服务器，不发送给 AI 服务。扩展会在用户点击开始填表后读取当前支持学校页面的表单结构，并根据本地档案写入表单字段。</p>
-            <p>购买激活码时，我们可能处理所选套餐、付款截图、购买邮箱、微信或支付宝联系信息，用于确认付款、发放激活码、处理技术支持和必要的售后沟通。我们不会出售用户数据，也不会将申请资料用于广告。</p>
+            <p>购买激活码时，我们可能处理所选套餐、购买邮箱、微信或邮箱联系信息，用于确认购买、发放激活码、处理技术支持和必要的售后沟通。我们不会出售用户数据，也不会将申请资料用于广告。</p>
             <p>订阅校验会处理激活码、license_id、购买邮箱、套餐状态和到期时间，用于防止重复激活和提供续费支持。ApplyEase 不以设备标识作为 license 绑定条件。您可通过本页联系方式请求查询、更正或删除购买联系信息；为对账、售后和争议处理所需的最小记录会按必要期限保留。</p>
             <p>默认情况下，ApplyEase 不会自动上传诊断日志。若您遇到技术问题，我们可能请您主动导出并发送诊断信息；诊断信息应限于插件版本、Chrome 版本、学校、页面类型、错误类型和失败字段标识等排查所需信息，不应包含学生申请资料正文、证件号、联系方式、文书或截图中的敏感内容。</p>
             <p>Use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
@@ -409,6 +339,5 @@
       </footer>
     </main>
 
-    <script src="checkout.js?v=20260530"></script>
   </body>
 </html>
