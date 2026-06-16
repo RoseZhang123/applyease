@@ -1,6 +1,6 @@
-# ApplyEase checkout page
+# ApplyEase support page
 
-`checkout.html` is a minimal external checkout and policy page intended for Cloudflare Pages static hosting.
+`checkout.html` is currently a minimal invite-only support and access page intended for Cloudflare Pages static hosting.
 
 Current MVP URL:
 
@@ -11,21 +11,20 @@ https://pages.rose-zhang-2022.workers.dev/checkout
 Deployment:
 
 - Cloudflare Pages is connected to `RoseZhang123/pages`.
-- The deployed repo stores the checkout files at the repository root.
+- The deployed repo stores the website files at the repository root.
 - Cloudflare Pages settings: framework preset `None`, build command empty, output directory `/`.
 - Push updates to `RoseZhang123/pages/main`; Cloudflare deploys automatically.
 
-Current MVP pricing model:
+Current MVP access model:
 
-- Personal plan: RMB 99/month or RMB 699/year.
-- Enterprise plan: RMB 399/month or RMB 2999/year.
-- The checkout page only displays pricing information. Purchase is completed by contacting support through WeChat or email.
-- Activation codes are issued manually after purchase confirmation.
+- The public page does not show plan prices, online payment controls, QR codes, or order note instructions.
+- Trial access, activation codes, renewal, and team beta evaluation are handled by contacting support through WeChat or email.
+- Activation codes are issued manually after support confirms the user's intended school/application scenario.
 
 Compliance notes:
 
-- Chrome Web Store does not process these payments.
-- Store listing text must disclose that core functionality requires a paid ApplyEase activation code if that remains true at launch.
-- The checkout page must keep pricing, renewal terms, refund policy, privacy policy, contact info, and non-Google payment disclosure visible before payment.
-- Refunds are not generally supported after activation code delivery, except when a verified ApplyEase technical issue prevents use on declared supported school application pages and no reasonable fix or workaround is provided.
+- Chrome Web Store does not process ApplyEase activation or support arrangements.
+- Store listing text must disclose that core functionality requires an ApplyEase activation code if that remains true at launch.
+- The public page must keep supported scope, refund policy, privacy policy, terms, contact info, and non-Google disclosure visible.
+- Refund/cancellation terms for any support-confirmed paid opening should be handled through support records; the public page should not present a public online checkout flow.
 - Support diagnostics are manual and user-initiated. Diagnostic reports should avoid student profile content and include only operational details needed for troubleshooting.

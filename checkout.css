@@ -255,7 +255,7 @@ div[id] {
 
 .workflow-band,
 .scope-band,
-.pricing-band,
+.access-band,
 .faq-band,
 .policy-band,
 .contact-band {
@@ -589,28 +589,28 @@ div[id] {
 }
 
 /* --------------------------------------------------------------------------
-   Pricing — 这是页面的视觉重心
+   Access — 这是页面的视觉重心
    -------------------------------------------------------------------------- */
-.pricing-band {
+.access-band {
   display: grid;
   gap: var(--space-6);
 }
 
-.pricing-band .section-heading {
+.access-band .section-heading {
   margin-bottom: 0;
 }
 
-.pricing-layout {
+.access-layout {
   display: block;
 }
 
-.pricing-main {
+.access-main {
   display: grid;
   gap: var(--space-5);
   min-width: 0;
 }
 
-.plans {
+.access-options {
   display: grid;
   gap: var(--space-5);
 }
@@ -659,13 +659,13 @@ div[id] {
   font-size: var(--text-sm);
 }
 
-.prices {
+.access-steps {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-3);
 }
 
-.price-option {
+.access-option {
   position: relative;
   display: grid;
   gap: 5px;
@@ -678,27 +678,27 @@ div[id] {
   text-align: left;
 }
 
-.price-option strong {
+.access-option strong {
   color: var(--ink);
   font-size: var(--text-2xl);
   font-weight: 850;
   line-height: 1;
 }
 
-.price-option strong em {
+.access-option strong em {
   font-style: normal;
   font-size: var(--text-base);
   font-weight: 700;
   color: var(--muted);
 }
 
-.price-option > span {
+.access-option > span {
   color: var(--ink-soft);
   font-size: var(--text-sm);
   font-weight: 700;
 }
 
-.price-option small {
+.access-option small {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -708,7 +708,7 @@ div[id] {
   font-weight: 800;
 }
 
-.pricing-contact-note {
+.access-contact-note {
   padding: var(--space-4) var(--space-5);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1026,10 +1026,8 @@ dd {
     order: 3;
     width: 100%;
     margin-left: 0;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 2px;
+    flex-wrap: wrap;
+    gap: 4px;
   }
 
   .topbar nav a {
@@ -1042,7 +1040,7 @@ dd {
 
   .workflow-band,
   .scope-band,
-  .pricing-band,
+  .access-band,
   .faq-band,
   .policy-band,
   .contact-band {
@@ -1053,7 +1051,7 @@ dd {
     grid-template-columns: 1fr;
   }
 
-  .prices {
+  .access-steps {
     grid-template-columns: 1fr;
   }
 
@@ -1076,7 +1074,7 @@ dd {
     padding: var(--space-5);
   }
 
-  .price-option {
+  .access-option {
     padding: var(--space-4);
   }
 }
