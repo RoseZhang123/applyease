@@ -246,7 +246,11 @@ main {
 
 section[id],
 div[id] {
-  scroll-margin-top: var(--header-h);
+  scroll-margin-top: var(--space-3);
+}
+
+.section-heading[id] {
+  scroll-margin-top: var(--space-3);
 }
 
 .workflow-band,
