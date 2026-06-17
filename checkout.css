@@ -237,7 +237,6 @@ div[id] {
 .workflow-band,
 .scope-band,
 .faq-band,
-.privacy-band,
 .contact-band {
   max-width: var(--maxw);
   margin-inline: auto;
@@ -687,37 +686,6 @@ div[id] {
 }
 
 /* --------------------------------------------------------------------------
-   Privacy
-   -------------------------------------------------------------------------- */
-.privacy-policy {
-  display: grid;
-  gap: var(--space-6);
-}
-
-.privacy-link {
-  width: fit-content;
-}
-
-.privacy-copy {
-  display: grid;
-  gap: var(--space-3);
-  max-width: 82ch;
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--line);
-}
-
-.privacy-copy h3 {
-  color: var(--ink);
-  font-size: var(--text-md);
-  font-weight: 800;
-  line-height: 1.35;
-}
-
-.privacy-copy p {
-  font-size: var(--text-base);
-}
-
-/* --------------------------------------------------------------------------
    Policy page
    -------------------------------------------------------------------------- */
 .policy-page {
@@ -846,7 +814,6 @@ div[id] {
   .workflow-band,
   .scope-band,
   .faq-band,
-  .privacy-band,
   .contact-band {
     padding-block: clamp(36px, 8vw, 48px);
   }
@@ -857,10 +824,6 @@ div[id] {
 
   .contact-list {
     grid-template-columns: 1fr;
-  }
-
-  .privacy-copy {
-    max-width: none;
   }
 
   .hero-actions .primary-link,
