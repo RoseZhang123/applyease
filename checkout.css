@@ -682,27 +682,33 @@ div[id] {
 /* --------------------------------------------------------------------------
    Privacy
    -------------------------------------------------------------------------- */
-.privacy-grid {
+.privacy-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-4);
+  border-top: 1px solid var(--line);
 }
 
-.privacy-grid article {
+.privacy-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--line);
+}
+
+.privacy-row dt {
+  color: var(--ink);
+  font-size: var(--text-md);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.privacy-row dd {
   display: grid;
   gap: var(--space-2);
-  padding: var(--space-5);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--panel);
-  box-shadow: var(--shadow-sm);
+  color: var(--muted);
 }
 
-.privacy-grid h3 {
-  font-size: var(--text-md);
-}
-
-.privacy-grid p {
+.privacy-row p {
   font-size: var(--text-sm);
 }
 
@@ -799,8 +805,9 @@ div[id] {
     grid-template-columns: 1fr;
   }
 
-  .privacy-grid {
+  .privacy-row {
     grid-template-columns: 1fr;
+    gap: var(--space-2);
   }
 
   .hero-actions .primary-link,
