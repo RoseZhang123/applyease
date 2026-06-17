@@ -231,6 +231,7 @@ div[id] {
 .workflow-band,
 .scope-band,
 .faq-band,
+.privacy-band,
 .contact-band {
   max-width: var(--maxw);
   margin-inline: auto;
@@ -682,34 +683,28 @@ div[id] {
 /* --------------------------------------------------------------------------
    Privacy
    -------------------------------------------------------------------------- */
-.privacy-list {
+.privacy-policy {
   display: grid;
+  gap: var(--space-6);
+}
+
+.privacy-copy {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 82ch;
+  padding-top: var(--space-5);
   border-top: 1px solid var(--line);
 }
 
-.privacy-row {
-  display: grid;
-  grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr);
-  gap: var(--space-5);
-  padding-block: var(--space-5);
-  border-bottom: 1px solid var(--line);
-}
-
-.privacy-row dt {
+.privacy-copy h3 {
   color: var(--ink);
   font-size: var(--text-md);
   font-weight: 800;
   line-height: 1.35;
 }
 
-.privacy-row dd {
-  display: grid;
-  gap: var(--space-2);
-  color: var(--muted);
-}
-
-.privacy-row p {
-  font-size: var(--text-sm);
+.privacy-copy p {
+  font-size: var(--text-base);
 }
 
 /* --------------------------------------------------------------------------
@@ -805,9 +800,8 @@ div[id] {
     grid-template-columns: 1fr;
   }
 
-  .privacy-row {
-    grid-template-columns: 1fr;
-    gap: var(--space-2);
+  .privacy-copy {
+    max-width: none;
   }
 
   .hero-actions .primary-link,
