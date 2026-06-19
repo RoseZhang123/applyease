@@ -21,7 +21,6 @@
         <a href="checkout.html#schools">支持学校</a>
         <a href="checkout.html#faq">常见问题</a>
         <a href="privacy.html" aria-current="page">隐私政策</a>
-        <a href="checkout.html#contact">联系我们</a>
       </nav>
     </header>
 
@@ -41,15 +40,19 @@
         <h3>Information We Process</h3>
         <p>The extension may process application information voluntarily provided by users, including name, email address, phone number, address, educational background, academic records, work or activity history, awards, publications, and other application-related information.</p>
         <p>When a user verifies service access, contacts support, or submits feedback, ApplyEase may process the service-related email address, contact information, support message, and a privacy-safe diagnostic summary needed to provide support.</p>
+        <p>For activation checks, the extension creates a random local device identifier in Chrome storage. ApplyEase receives this identifier only for service eligibility checks and stores a hashed version on the server. It is not derived from hardware fingerprints, Chrome account identity, school application data, or browsing history.</p>
+        <p>After activation, the extension fetches a server-delivered configuration bundle (which fields exist on each supported school's application form and how they map to local profile fields) from an ApplyEase service endpoint and caches it locally. Requests to this endpoint include only the license identifier, the service email address, and the locally generated device identifier as eligibility credentials — they never include application profile contents, form values, or browsing history. The endpoint returns the field-mapping configuration only; it does not receive or store any application data.</p>
 
         <h3>How We Use Information</h3>
         <p>Application information is used only to save local application records, match application form fields, fill supported university application forms after the user starts the workflow, and improve the reliability of the extension's form automation.</p>
-        <p>Service access, support, and feedback information is used only for service eligibility checks, customer support, troubleshooting, and necessary follow-up.</p>
+        <p>Service access, support, feedback information, and the hashed activation device identifier are used only for service eligibility checks, customer support, troubleshooting, fraud prevention, and necessary follow-up.</p>
 
         <h3>Data Storage And Transfer</h3>
         <p>Application records are stored by default in the user's local Chrome browser storage. ApplyEase does not upload application records to our servers by default.</p>
         <p>ApplyEase does not send application records to AI services by default. If future features introduce server sync or AI processing, we will update this policy and the relevant user-facing disclosures before enabling those features.</p>
-        <p>Service access, support, and feedback information may be transmitted to ApplyEase service endpoints over secure HTTPS connections when needed to provide the requested service.</p>
+        <p>Service access, support, feedback information, and the activation device identifier may be transmitted to ApplyEase service endpoints over secure HTTPS connections when needed to provide the requested service.</p>
+        <p>The server-delivered field-mapping configuration is cached locally in the user's Chrome browser storage for offline use. The extension revalidates the cache against the server periodically using a content fingerprint; only the eligibility credentials described above are sent on revalidation. Cached configuration is removed when the extension is uninstalled or when Chrome storage is cleared.</p>
+        <p>Activation is bound to the browser profile/device where the code is first activated. Clearing Chrome storage, uninstalling the extension, using a different Chrome profile, or changing devices may remove the local device identifier and prevent the same activation code from being used again on that browser profile/device.</p>
 
         <h3>Third-Party Services</h3>
         <p>ApplyEase does not sell user data and does not share user data with advertisers or unrelated third parties.</p>
@@ -78,15 +81,19 @@
         <h3>我们处理的信息</h3>
         <p>扩展可能处理用户主动提供的申请信息，包括姓名、邮箱、电话号码、地址、教育背景、成绩信息、工作或活动经历、奖项、发表经历以及其他留学申请相关资料。</p>
         <p>当用户校验服务访问、联系支持或提交反馈时，ApplyEase 可能处理服务相关邮箱、联系方式、问题描述以及用于排查问题的隐私安全诊断摘要。</p>
+        <p>用于激活校验时，扩展会在 Chrome 本地存储中生成一个随机设备标识。ApplyEase 仅将该标识用于使用资格校验，并在服务端保存哈希值。它不是硬件指纹，也不是 Chrome 账号身份、学校申请资料或浏览历史。</p>
+        <p>激活完成后，扩展会从 ApplyEase 服务端点获取一份服务端下发的配置包（描述各受支持学校申请表上有哪些字段、以及它们如何与本地档案字段对应），并缓存在本地。向该端点发送的请求只包含 license 标识、服务邮箱以及本地随机生成的设备标识作为使用资格凭证 —— 绝不包含申请档案内容、表单填写值或浏览历史。该端点仅返回字段映射配置；它不会接收或保存任何申请数据。</p>
 
         <h3>信息用途</h3>
         <p>申请信息仅用于保存本地申请档案、匹配申请表字段、在用户主动开始流程后填写支持的学校申请表，以及提升扩展自动填写功能的可靠性。</p>
-        <p>服务访问、支持和反馈相关信息仅用于使用资格校验、客服支持、问题排查和必要的后续沟通。</p>
+        <p>服务访问、支持、反馈相关信息以及激活设备标识的哈希值，仅用于使用资格校验、客服支持、问题排查、防止滥用和必要的后续沟通。</p>
 
         <h3>数据存储与传输</h3>
         <p>申请档案默认保存在用户自己的 Chrome 浏览器本地存储中。ApplyEase 默认不会把申请档案上传到我们的服务器。</p>
         <p>ApplyEase 默认不会把申请档案发送给 AI 服务。如果未来功能引入服务器同步或 AI 处理，我们会在启用相关功能前更新本政策和对应的用户可见说明。</p>
-        <p>在提供用户请求的服务时，服务访问、支持和反馈相关信息可能会通过安全的 HTTPS 连接传输至 ApplyEase 服务端点。</p>
+        <p>在提供用户请求的服务时，服务访问、支持、反馈相关信息以及激活设备标识可能会通过安全的 HTTPS 连接传输至 ApplyEase 服务端点。</p>
+        <p>服务端下发的字段映射配置会缓存在用户 Chrome 浏览器本地存储中以支持离线使用。扩展会定期通过内容指纹与服务端比对来重校验缓存；重校验时仅发送上文所述的使用资格凭证。卸载扩展或清除 Chrome 存储时，缓存的配置会一并被移除。</p>
+        <p>激活会绑定到首次激活该激活码的浏览器资料/设备。清除 Chrome 存储、卸载扩展、使用其他 Chrome 用户资料或更换设备，可能会移除本地设备标识，并导致同一个激活码无法继续在该浏览器资料/设备上使用。</p>
 
         <h3>第三方服务</h3>
         <p>ApplyEase 不会出售用户数据，也不会把用户数据分享给广告商或无关第三方。</p>
