@@ -39,7 +39,7 @@
 
         <h3>Information We Process</h3>
         <p>The extension may process application information voluntarily provided by users, including name, email address, phone number, address, educational background, academic records, work or activity history, awards, publications, and other application-related information.</p>
-        <p>When a user verifies service access, contacts support, or submits feedback, ApplyEase may process the service-related email address, contact information, support message, and a privacy-safe diagnostic summary needed to provide support.</p>
+        <p>When a user verifies service access, contacts support, or submits feedback, ApplyEase may process the service-related email address, contact information, support message, and a privacy-safe diagnostic summary needed to provide support. A diagnostic report is sent only when the user writes a short description and chooses to send it from the extension's side panel; it contains form field names, the length and character types of filled values, and the result of each autofill step, never the values themselves.</p>
         <p>For activation checks, the extension creates a random local device identifier in Chrome storage. ApplyEase receives this identifier only for service eligibility checks and stores a hashed version on the server. It is not derived from hardware fingerprints, Chrome account identity, school application data, or browsing history.</p>
         <p>After activation, the extension fetches a server-delivered configuration bundle (which fields exist on each supported school's application form and how they map to local profile fields) from an ApplyEase service endpoint and caches it locally. Requests to this endpoint include only the license identifier, the service email address, and the locally generated device identifier as eligibility credentials — they never include application profile contents, form values, or browsing history. The endpoint returns the field-mapping configuration only; it does not receive or store any application data.</p>
 
@@ -56,7 +56,7 @@
 
         <h3>Third-Party Services</h3>
         <p>ApplyEase does not sell user data and does not share user data with advertisers or unrelated third parties.</p>
-        <p>We may use infrastructure providers only as needed to operate the website, service access checks, and support workflow. These providers are not allowed to use user data for advertising or unrelated purposes.</p>
+        <p>We may use infrastructure providers only as needed to operate the website, service access checks, and support workflow, including Cloudflare for the service endpoints and email delivery, and Google (Gmail) for the support mailbox that receives feedback and diagnostic reports. These providers are not allowed to use user data for advertising or unrelated purposes.</p>
 
         <h3>Browser Permissions</h3>
         <ul>
@@ -80,7 +80,7 @@
 
         <h3>我们处理的信息</h3>
         <p>扩展可能处理用户主动提供的申请信息，包括姓名、邮箱、电话号码、地址、教育背景、成绩信息、工作或活动经历、奖项、发表经历以及其他留学申请相关资料。</p>
-        <p>当用户校验服务访问、联系支持或提交反馈时，ApplyEase 可能处理服务相关邮箱、联系方式、问题描述以及用于排查问题的隐私安全诊断摘要。</p>
+        <p>当用户校验服务访问、联系支持或提交反馈时，ApplyEase 可能处理服务相关邮箱、联系方式、问题描述以及用于排查问题的隐私安全诊断摘要。只有在用户于扩展侧边栏写下问题描述并主动点击发送时，才会发送诊断报告；报告包含表单字段名、所填内容的长度和字符类型以及每一步自动填写的结果，绝不包含所填写的内容本身。</p>
         <p>用于激活校验时，扩展会在 Chrome 本地存储中生成一个随机设备标识。ApplyEase 仅将该标识用于使用资格校验，并在服务端保存哈希值。它不是硬件指纹，也不是 Chrome 账号身份、学校申请资料或浏览历史。</p>
         <p>激活完成后，扩展会从 ApplyEase 服务端点获取一份服务端下发的配置包（描述各受支持学校申请表上有哪些字段、以及它们如何与本地档案字段对应），并缓存在本地。向该端点发送的请求只包含 license 标识、服务邮箱以及本地随机生成的设备标识作为使用资格凭证 —— 绝不包含申请档案内容、表单填写值或浏览历史。该端点仅返回字段映射配置；它不会接收或保存任何申请数据。</p>
 
@@ -97,7 +97,7 @@
 
         <h3>第三方服务</h3>
         <p>ApplyEase 不会出售用户数据，也不会把用户数据分享给广告商或无关第三方。</p>
-        <p>我们可能仅在运营网站、服务访问校验和支持流程所必需的范围内使用基础设施服务提供商。这些服务提供商不得将用户数据用于广告或无关目的。</p>
+        <p>我们可能仅在运营网站、服务访问校验和支持流程所必需的范围内使用基础设施服务提供商，包括用于服务端点和邮件发送的 Cloudflare，以及接收反馈和诊断报告的客服邮箱服务 Google（Gmail）。这些服务提供商不得将用户数据用于广告或无关目的。</p>
 
         <h3>浏览器权限说明</h3>
         <ul>
